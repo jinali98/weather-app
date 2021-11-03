@@ -24,4 +24,5 @@ export const Date = styled.p`
 export const Image = styled.img`
   width: 60px;
   margin: 5px 0;
+  cursor: pointer;
 `;
