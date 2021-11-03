@@ -1,0 +1,20 @@
+import React from "react";
+import { withRouter } from "react-router-dom";
+import Card from "../card/card.component";
+
+const CityWeatherCard = ({ history, id }) => {
+  return (
+    <Card weatherCard>
+      <div onClick={() => history.push(`/${id}`)}>
+        <p>Paris</p>
+        <div>icon</div>
+        <p>15</p>
+        <p>CLOUDS</p>
+        <p>min 15.22</p>
+        <p>max 14.78</p>
+      </div>
+    </Card>
+  );
+};
+
+export default withRouter(CityWeatherCard);
