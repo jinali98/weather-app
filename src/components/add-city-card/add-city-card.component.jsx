@@ -1,21 +1,20 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Card from "../card/card.component";
-import {
-  ButtonClick,
-  CardText,
-  ContentWrapper,
-  ImageContainer,
-} from "./add-city-card.styles";
+import CustomButton from "../custom-button/custom-button.component";
+import { CardText, ContentWrapper } from "./add-city-card.styles";
 
 const AddCityCard = ({ history, match }) => {
   return (
     <Card addCity>
       <ContentWrapper>
         <CardText>Add A City</CardText>
-        <ButtonClick onClick={() => history.push(`${match.url}search`)}>
-          <p>&#10010;</p>
-        </ButtonClick>
+        <CustomButton
+          addCardButton
+          onClick={() => history.push(`${match.url}search`)}
+        >
+          &#10010;
+        </CustomButton>
       </ContentWrapper>
     </Card>
   );

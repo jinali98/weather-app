@@ -1,9 +1,8 @@
 import React from "react";
-import Card from "../card/card.component";
 
 const WeatherDataItem = () => {
   return (
-    <Card>
+    <div>
       <h1>ROME</h1>
       <div>
         <p>16</p>
@@ -17,7 +16,7 @@ const WeatherDataItem = () => {
           <p>1 K/M</p>
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 

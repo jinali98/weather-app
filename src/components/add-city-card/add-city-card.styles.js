@@ -13,18 +13,3 @@ export const CardText = styled.p`
   font-size: 35px;
   font-weight: 600;
 `;
-
-export const ButtonClick = styled.div`
-  height: 200px;
-  width: 200px;
-  margin: auto;
-  background-color: ${color_3};
-  border-radius: 50%;
-  cursor: pointer;
-
-  p {
-    font-size: 100px;
-    color: ${color_2};
-    margin: 25px 0;
-  }
-`;

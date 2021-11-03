@@ -1,12 +1,16 @@
 import React from "react";
+import CustomButton from "../../components/custom-button/custom-button.component";
 import ForecastContainer from "../../components/forecast-container/forecast-container.component";
+import { ForecastPageContainer } from "./forecast-page.styles";
 
 const ForecastPage = ({ history }) => {
   return (
-    <div>
-      <button onClick={() => history.goBack()}>go back</button>
+    <ForecastPageContainer>
+      <CustomButton backButton onClick={() => history.goBack()}>
+        &#8592;
+      </CustomButton>
       <ForecastContainer />
-    </div>
+    </ForecastPageContainer>
   );
 };
 
