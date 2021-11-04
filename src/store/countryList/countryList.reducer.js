@@ -3,6 +3,10 @@ import { addNewCountryToTheList } from "./countryList.utils";
 
 const INITIAL_STATE = {
   countryList: [],
+  countryListWeatherData: [],
+  isStartedFetching: false,
+  isLoading: false,
+  errorMessage: "",
 };
 
 const countryListReducer = (state = INITIAL_STATE, action) => {
@@ -16,9 +20,31 @@ const countryListReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
       };
+    case countryListActionTypes.START_FETCHING_COUNTRYlIST_DATA:
+      return {
+        ...state,
+        isLoading: true,
+        isStartedFetching: true,
+      };
+    case countryListActionTypes.SUCCESS_FETCHING_COUNTRYlIST_DATA:
+      return {
+        ...state,
+        isLoading: false,
+        isStartedFetching: false,
+        countryListWeatherData: action.payload,
+      };
+    case countryListActionTypes.FAIL_FETCHING_COUNTRYlIST_DATA:
+      return {
+        ...state,
+        isLoading: false,
+        isStartedFetching: false,
+        errorMessage: action.payload,
+      };
     default:
       return state;
   }
 };
 
 export default countryListReducer;
+
+//update the same country list with new data. append new forecast and weatherdata to each country

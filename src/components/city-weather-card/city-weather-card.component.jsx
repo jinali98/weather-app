@@ -2,11 +2,12 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import Card from "../card/card.component";
 
-const CityWeatherCard = ({ history, id }) => {
+const CityWeatherCard = ({ history, id, country }) => {
+  const { name, coord } = country;
   return (
     <Card weatherCard>
       <div onClick={() => history.push(`/${id}`)}>
-        <p>Paris</p>
+        <p>{name}</p>
         <div>icon</div>
         <p>15</p>
         <p>CLOUDS</p>
