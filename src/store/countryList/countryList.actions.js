@@ -33,7 +33,7 @@ export const fetchASyncCountryListData = (countryList) => {
         countryList.map((country) => {
           const lat = country.coord.lat;
           const lon = country.coord.lon;
-          const url = `${API_URL_FORECAST}${lat}&lon=${lon}&exclude=hourly,current,minutely,alerts&appid=23de14c96e3f808b747eec9f561cd9cc`;
+          const url = `${API_URL_FORECAST}${lat}&lon=${lon}&exclude=hourly,minutely&appid=23de14c96e3f808b747eec9f561cd9cc`;
           return fetchData(url);
         })
       );

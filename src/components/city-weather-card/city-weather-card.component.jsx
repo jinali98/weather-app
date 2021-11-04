@@ -2,17 +2,25 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import Card from "../card/card.component";
 
-const CityWeatherCard = ({ history, id, country }) => {
-  const { name, coord } = country;
+const CityWeatherCard = ({ history, country, otherProps }) => {
+  console.log(otherProps);
+  const {
+    current: { humidity, pressure, wind_speed, temp, weather },
+  } = country;
+
+  const { main } = weather[0];
+
+  const { name, id } = otherProps;
   return (
     <Card weatherCard>
-      <div onClick={() => history.push(`/${id}`)}>
+      <div onClick={() => history.push(`/${name}`)}>
         <p>{name}</p>
         <div>icon</div>
-        <p>15</p>
-        <p>CLOUDS</p>
-        <p>min 15.22</p>
-        <p>max 14.78</p>
+        <p>{temp}</p>
+        <p>{main}</p>
+        <p>{pressure}</p>
+        <p>{humidity}</p>
+        <p>{wind_speed}</p>
       </div>
     </Card>
   );
