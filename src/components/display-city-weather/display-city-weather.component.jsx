@@ -1,22 +1,31 @@
 import React from "react";
-import Card from "../card/card.component";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectWeatherInfo } from "../../store/weather/weather.selectors";
 
-const DisplayCityWeather = () => {
+const DisplayCityWeather = ({ weatherInfo }) => {
   return (
-    <Card searchResultCard>
+    <>
       {/* if there is a city show weather data. add a background image  display data on it*/}
-
-      <p>Rome</p>
-      <div>icon</div>
-      <p>15</p>
-      <p>CLOUDS</p>
-      <div>
-        <p>min 15.22</p>
-        <p>max 14.78</p>
-      </div>
-      <button>add country</button>
-    </Card>
+      {weatherInfo && (
+        <div>
+          <p>{weatherInfo.name}</p>
+          <div>icon</div>
+          <p>{weatherInfo.main.temp}</p>
+          <p>{weatherInfo.condition}</p>
+          <div>
+            <p>{`min ${weatherInfo.main.temp_min}`}</p>
+            <p>{`max ${weatherInfo.main.temp_max}`}</p>
+          </div>
+          <button>add country</button>
+        </div>
+      )}
+    </>
   );
 };
 
-export default DisplayCityWeather;
+const mapStateToProps = createStructuredSelector({
+  weatherInfo: selectWeatherInfo,
+});
+
+export default connect(mapStateToProps)(DisplayCityWeather);
