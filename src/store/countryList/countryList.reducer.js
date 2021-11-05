@@ -1,5 +1,8 @@
 import { countryListActionTypes } from "./countryList.types";
-import { addNewCountryToTheList } from "./countryList.utils";
+import {
+  addNewCountryToTheList,
+  formatCountryListWeather,
+} from "./countryList.utils";
 
 const INITIAL_STATE = {
   countryList: [],
@@ -31,7 +34,10 @@ const countryListReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         isStartedFetching: false,
-        countryListWeatherData: action.payload,
+        countryListWeatherData: formatCountryListWeather(
+          action.payload,
+          state.countryList
+        ),
       };
     case countryListActionTypes.FAIL_FETCHING_COUNTRYlIST_DATA:
       return {

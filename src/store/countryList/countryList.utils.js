@@ -9,3 +9,9 @@ export const addNewCountryToTheList = (newCountry, countryList) => {
 
   return countryList;
 };
+
+export const formatCountryListWeather = (fetchedData, countryList) => {
+  return countryList.map((country, index) => {
+    return { ...fetchedData[index], id: country.id, name: country.name };
+  });
+};

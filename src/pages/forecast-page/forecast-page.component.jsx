@@ -3,7 +3,8 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import ForecastContainer from "../../components/forecast-container/forecast-container.component";
 import { ForecastPageContainer } from "./forecast-page.styles";
 
-const ForecastPage = ({ history }) => {
+const ForecastPage = ({ history, match }) => {
+  console.log(match.params.city);
   return (
     <ForecastPageContainer>
       <CustomButton backButton onClick={() => history.goBack()}>

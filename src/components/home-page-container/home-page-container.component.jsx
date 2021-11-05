@@ -9,24 +9,19 @@ import {
 } from "../../store/countryList/countryList.selectors";
 import { connect } from "react-redux";
 
-const HomePageContainer = ({ countryList, countries }) => {
+const HomePageContainer = ({ countryListWeather }) => {
   return (
     <HomeContentWrapper>
       <AddCityCard />
-      {countryList?.map((country, index) => (
-        <CityWeatherCard
-          key={countries[index].id}
-          country={country}
-          otherProps={countries[index]}
-        />
+      {countryListWeather?.map((country) => (
+        <CityWeatherCard key={country.id} country={country} />
       ))}
     </HomeContentWrapper>
   );
 };
 
 const mapStateToProps = createStructuredSelector({
-  countryList: selectCountryListWeather,
-  countries: selectCountryList,
+  countryListWeather: selectCountryListWeather,
 });
 
 export default connect(mapStateToProps)(HomePageContainer);
