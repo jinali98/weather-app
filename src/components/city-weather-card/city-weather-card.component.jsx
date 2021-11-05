@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import Card from "../card/card.component";
 
 const CityWeatherCard = ({ history, country }) => {
-  console.log(country);
   const {
     current: { humidity, pressure, wind_speed, temp, weather },
     name,

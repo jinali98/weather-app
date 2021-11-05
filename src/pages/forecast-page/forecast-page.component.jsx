@@ -4,7 +4,7 @@ import ForecastContainer from "../../components/forecast-container/forecast-cont
 import { ForecastPageContainer } from "./forecast-page.styles";
 
 const ForecastPage = ({ history, match }) => {
-  console.log(match.params.city);
+  console.log(match.params.name);
   return (
     <ForecastPageContainer>
       <CustomButton backButton onClick={() => history.goBack()}>
