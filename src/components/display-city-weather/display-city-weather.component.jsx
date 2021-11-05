@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { icons } from "../../constant/icon";
 import { addCountry } from "../../store/countryList/countryList.actions";
 import { selectWeatherInfo } from "../../store/weather/weather.selectors";
 
@@ -16,7 +17,7 @@ const DisplayCityWeather = ({ weatherInfo, addCountry }) => {
       {weatherInfo && (
         <div>
           <p>{weatherInfo.name}</p>
-          <div>icon</div>
+          <img src={icons[`${weatherInfo.condition}`]} alt="weather-icon" />
           <p>{weatherInfo.main.temp}</p>
           <p>{weatherInfo.condition}</p>
           <div>

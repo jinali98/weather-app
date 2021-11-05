@@ -1,21 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { createStructuredSelector } from "reselect";
 import { selectForecastUsingParam } from "../../store/countryList/countryList.selectors";
 import Card from "../card/card.component";
 import ForecastItem from "../forecast-item/forecast-item.component";
 import WeatherDataItem from "../weather-data-item/weather-data-item.component";
 
 const ForecastContainer = ({ match, forecastWeather }) => {
-  console.log(match.params.name, forecastWeather);
+  console.log(forecastWeather);
   return (
     <Card>
-      <WeatherDataItem />
+      <WeatherDataItem
+        current={forecastWeather.current}
+        name={forecastWeather.name}
+      />
       <div>
-        <ForecastItem />
-        <ForecastItem />
-        <ForecastItem />
+        {forecastWeather.daily?.slice(0, 5).map((day) => (
+          <ForecastItem key={day.dt} day={day} />
+        ))}
       </div>
     </Card>
   );

@@ -31,8 +31,8 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Tajawal', sans-serif;
     color: ${color_3};
-    background-color: ${color_2};
-}
+    background: rgb(48,36,97);
+background: linear-gradient(270deg, rgba(48,36,97,1) 13%, rgba(45,36,86,1) 24%, rgba(55,77,133,1) 51%, rgba(56,81,138,1) 77%, rgba(36,42,108,1) 91%);
 
 html{
     scroll-behavior: smooth;

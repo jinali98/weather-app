@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SearchPageWrapper = styled.div`
-  width: 80vw;
+  width: 70vw;
   margin: auto;
 `;
 

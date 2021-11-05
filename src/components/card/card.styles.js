@@ -1,21 +1,19 @@
 import styled, { css } from "styled-components";
-import {
-  cardBackground_1,
-  cardBackground_2,
-  color_3,
-  color_6,
-} from "../../global.styles";
+import { cardBackground_1, color_3, color_6 } from "../../global.styles";
 
-import bg from "../../svgs/cities/tunis.svg";
+import { wallpapers } from "../../constant/wallpapers";
+import { generateRandomNumber } from "../../utils/randomNumber";
 
 const weatherCard = css`
-  background: ${cardBackground_1.backgroundMain};
-  background: ${cardBackground_1.background};
+  background-image: url(${wallpapers[generateRandomNumber(1, 4)]});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 500px;
 `;
 const addCityCard = css`
-  background: ${cardBackground_2.backgroundMain};
-  background: ${cardBackground_2.background};
+  background: ${cardBackground_1.backgroundMain};
+  background: ${cardBackground_1.background};
   border: 3px solid ${color_3};
   height: 500px;
 `;
@@ -31,13 +29,13 @@ const searchPageCard = css`
 const searchResultCard = css`
   width: 50%;
   text-align: center;
-  padding: 0%.5rem;
-  background-color: ${color_3};
+  padding: 0.5rem;
+  /* background-color: ${color_3}; */
   color: ${color_6};
   border-radius: 12px;
   text-align: center;
 
-  background: url(${bg});
+  background-image: url(${wallpapers[generateRandomNumber(1, 4)]});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

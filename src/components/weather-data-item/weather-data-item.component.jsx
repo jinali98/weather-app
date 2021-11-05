@@ -1,19 +1,20 @@
 import React from "react";
 
-const WeatherDataItem = () => {
+const WeatherDataItem = ({ current, name }) => {
+  const { temp, wind_speed, humidity, weather } = current;
   return (
     <div>
-      <h1>ROME</h1>
+      <h1>{name}</h1>
       <div>
-        <p>16</p>
-        <p>clouds</p>
+        <p>{temp}</p>
+        <p>{weather[0].main}</p>
         <div>
           <p>humidity</p>
-          <p>67%</p>
+          <p>{humidity}%</p>
         </div>
         <div>
           <p>wind</p>
-          <p>1 K/M</p>
+          <p>{wind_speed} K/M</p>
         </div>
       </div>
     </div>

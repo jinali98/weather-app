@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { icons } from "../../constant/icon";
 import Card from "../card/card.component";
 
 const CityWeatherCard = ({ history, country }) => {
@@ -15,7 +16,7 @@ const CityWeatherCard = ({ history, country }) => {
     <Card weatherCard>
       <div onClick={() => history.push(`/${name}`)}>
         <p>{name}</p>
-        <div>icon</div>
+        <img src={icons[`${main}`]} alt="weather-icon" />
         <p>{temp}</p>
         <p>{main}</p>
         <p>{pressure}</p>
