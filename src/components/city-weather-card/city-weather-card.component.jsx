@@ -2,6 +2,16 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { icons } from "../../constant/icon";
 import Card from "../card/card.component";
+import {
+  CardWrapper,
+  Condition,
+  CountryName,
+  Humidity,
+  Preassure,
+  Temperature,
+  WeatherImage,
+  WindSpeed,
+} from "./city-weather-card.styles";
 
 const CityWeatherCard = ({ history, country }) => {
   const {
@@ -14,15 +24,15 @@ const CityWeatherCard = ({ history, country }) => {
 
   return (
     <Card weatherCard>
-      <div onClick={() => history.push(`/${name}`)}>
-        <p>{name}</p>
-        <img src={icons[`${main}`]} alt="weather-icon" />
-        <p>{temp}</p>
-        <p>{main}</p>
-        <p>{pressure}</p>
-        <p>{humidity}</p>
-        <p>{wind_speed}</p>
-      </div>
+      <CardWrapper onClick={() => history.push(`/${name}`)}>
+        <CountryName>{name}</CountryName>
+        <WeatherImage src={icons[`${main}`]} alt="weather-icon" />
+        <Temperature>{temp}</Temperature>
+        <Condition>{main}</Condition>
+        <Preassure>{pressure}</Preassure>
+        <Humidity>{humidity}</Humidity>
+        <WindSpeed>{wind_speed}</WindSpeed>
+      </CardWrapper>
     </Card>
   );
 };

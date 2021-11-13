@@ -12,6 +12,7 @@ import {
 } from "../../store/weather/weather.selectors";
 import { SearchContentWrapper, SearchPageWrapper } from "./search-page.styles";
 
+//use withSpinner HOC to display spinner while fetching data from the API
 const DisplayCityWithSpinner = withSpinner(DisplayCityWeather);
 
 const SearchPage = ({ history, isLoading, isStartedFetching }) => {

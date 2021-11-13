@@ -4,6 +4,10 @@ import { createStructuredSelector } from "reselect";
 import { icons } from "../../constant/icon";
 import { addCountry } from "../../store/countryList/countryList.actions";
 import { selectWeatherInfo } from "../../store/weather/weather.selectors";
+import {
+  CardWrapper,
+  WeatherImage,
+} from "../city-weather-card/city-weather-card.styles";
 
 const DisplayCityWeather = ({ weatherInfo, addCountry }) => {
   const addCountryHandler = () => {
@@ -15,9 +19,12 @@ const DisplayCityWeather = ({ weatherInfo, addCountry }) => {
     <>
       {/* if there is a city show weather data. add a background image  display data on it*/}
       {weatherInfo && (
-        <div>
+        <CardWrapper>
           <p>{weatherInfo.name}</p>
-          <img src={icons[`${weatherInfo.condition}`]} alt="weather-icon" />
+          <WeatherImage
+            src={icons[`${weatherInfo.condition}`]}
+            alt="weather-icon"
+          />
           <p>{weatherInfo.main.temp}</p>
           <p>{weatherInfo.condition}</p>
           <div>
@@ -25,7 +32,7 @@ const DisplayCityWeather = ({ weatherInfo, addCountry }) => {
             <p>{`max ${weatherInfo.main.temp_max}`}</p>
           </div>
           <button onClick={addCountryHandler}>add country</button>
-        </div>
+        </CardWrapper>
       )}
     </>
   );
