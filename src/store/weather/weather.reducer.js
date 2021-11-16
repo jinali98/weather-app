@@ -1,4 +1,5 @@
 import { weatherActionTypes } from "./weather.types";
+import { formatWeatherData } from "./weather.utils";
 
 const INITIAL_STATE = {
   isLoading: false,
@@ -19,7 +20,7 @@ const weatherReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         isStartedFetching: false,
-        weatherInfor: action.payload,
+        weatherInfor: formatWeatherData(action.payload),
       };
     case weatherActionTypes.FAIL_FETCHING_WEATHER_DATA:
       return {
