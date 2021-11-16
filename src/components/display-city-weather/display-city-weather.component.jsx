@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { icons } from "../../constant/icon";
 import { addCountry } from "../../store/countryList/countryList.actions";
@@ -9,10 +9,14 @@ import {
   WeatherImage,
 } from "../city-weather-card/city-weather-card.styles";
 
-const DisplayCityWeather = ({ weatherInfo, addCountry }) => {
+const DisplayCityWeather = () => {
+  const weatherInfo = useSelector(selectWeatherInfo);
+  const dispatch = useDispatch();
+
+  //add country to the list of selected countries
   const addCountryHandler = () => {
     const { name, id, coord } = weatherInfo;
-    addCountry({ name, id, coord });
+    dispatch(addCountry({ name, id, coord }));
   };
 
   return (
@@ -38,12 +42,12 @@ const DisplayCityWeather = ({ weatherInfo, addCountry }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  weatherInfo: selectWeatherInfo,
-});
+// const mapStateToProps = createStructuredSelector({
+//   weatherInfo: selectWeatherInfo,
+// });
 
-const mapDispatchToProps = (dispatch) => ({
-  addCountry: (country) => dispatch(addCountry(country)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   addCountry: (country) => dispatch(addCountry(country)),
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayCityWeather);
+export default DisplayCityWeather;

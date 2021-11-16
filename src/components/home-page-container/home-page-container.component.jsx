@@ -7,9 +7,10 @@ import {
   selectCountryList,
   selectCountryListWeather,
 } from "../../store/countryList/countryList.selectors";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 
-const HomePageContainer = ({ countryListWeather }) => {
+const HomePageContainer = () => {
+  const countryListWeather = useSelector(selectCountryListWeather);
   return (
     <HomeContentWrapper>
       <AddCityCard />
@@ -20,8 +21,8 @@ const HomePageContainer = ({ countryListWeather }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  countryListWeather: selectCountryListWeather,
-});
+// const mapStateToProps = createStructuredSelector({
+//   countryListWeather: selectCountryListWeather,
+// });
 
-export default connect(mapStateToProps)(HomePageContainer);
+export default HomePageContainer;

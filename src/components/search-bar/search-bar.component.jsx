@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { fetchASyncWeatherData } from "../../store/weather/weather.actions";
 import Card from "../card/card.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -9,8 +9,9 @@ import {
   SearchIcon,
   SearchTitle,
 } from "./search-bar.styles";
-const SearchBar = ({ getCountryName }) => {
+const SearchBar = () => {
   const [userInput, setUserInput] = useState("");
+  const dispatch = useDispatch();
 
   const userInputChangeHandler = (e) => {
     setUserInput(e.target.value);
@@ -18,7 +19,7 @@ const SearchBar = ({ getCountryName }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    getCountryName(userInput);
+    dispatch(fetchASyncWeatherData(userInput));
     setUserInput("");
   };
 
@@ -41,8 +42,8 @@ const SearchBar = ({ getCountryName }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  getCountryName: (name) => dispatch(fetchASyncWeatherData(name)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   getCountryName: (name) => dispatch(fetchASyncWeatherData(name)),
+// });
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default SearchBar;

@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import Card from "../../components/card/card.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -12,10 +12,13 @@ import {
 } from "../../store/weather/weather.selectors";
 import { SearchContentWrapper, SearchPageWrapper } from "./search-page.styles";
 
-//use withSpinner HOC to display spinner while fetching data from the API
+//use withSpinner HOC to display loading spinner while fetching data from the API
 const DisplayCityWithSpinner = withSpinner(DisplayCityWeather);
 
-const SearchPage = ({ history, isLoading, isStartedFetching }) => {
+const SearchPage = ({ history }) => {
+  const isLoading = useSelector(selectIsLoading);
+  const isStartedFetching = useSelector(selectIsStartedFetching);
+
   return (
     <SearchPageWrapper>
       <CustomButton backButton onClick={() => history.goBack()}>
@@ -34,8 +37,8 @@ const SearchPage = ({ history, isLoading, isStartedFetching }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  isLoading: selectIsLoading,
-  isStartedFetching: selectIsStartedFetching,
-});
-export default connect(mapStateToProps)(SearchPage);
+// const mapStateToProps = createStructuredSelector({
+//   isLoading: selectIsLoading,
+//   isStartedFetching: selectIsStartedFetching,
+// });
+export default SearchPage;
