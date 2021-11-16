@@ -2,9 +2,10 @@ import React from "react";
 import { getCurrentDate } from "../../utils/getCurrentDate";
 import { ContentWrapper, Date, HeaderContainer, Image } from "./header.styles";
 import logo from "../../svgs/icon.png";
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const Header = ({ history }) => {
+const Header = () => {
+  const history = useHistory();
   const todaysDate = getCurrentDate();
   return (
     <HeaderContainer>
@@ -16,4 +17,4 @@ const Header = ({ history }) => {
   );
 };
 
-export default withRouter(Header);
+export default Header;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchASyncWeatherData } from "../../store/weather/weather.actions";
 import Card from "../card/card.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -41,9 +41,5 @@ const SearchBar = () => {
     </Card>
   );
 };
-
-// const mapDispatchToProps = (dispatch) => ({
-//   getCountryName: (name) => dispatch(fetchASyncWeatherData(name)),
-// });
 
 export default SearchBar;

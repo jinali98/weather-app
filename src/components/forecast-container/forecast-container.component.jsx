@@ -1,16 +1,16 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { selectForecastUsingParam } from "../../store/countryList/countryList.selectors";
 import Card from "../card/card.component";
 import ForecastItem from "../forecast-item/forecast-item.component";
 import WeatherDataItem from "../weather-data-item/weather-data-item.component";
 
-const ForecastContainer = ({ match }) => {
+const ForecastContainer = () => {
+  const params = useParams();
+
   //pass the country name as the url parameter to go to the relevant country forecast page
-  const forecastWeather = useSelector(
-    selectForecastUsingParam(match.params.name)
-  );
+  const forecastWeather = useSelector(selectForecastUsingParam(params.name));
   return (
     <Card>
       <WeatherDataItem
@@ -26,8 +26,4 @@ const ForecastContainer = ({ match }) => {
   );
 };
 
-// const mapStateToProps = (state, ownProps) => ({
-//   forecastWeather: selectForecastUsingParam(ownProps.match.params.name)(state),
-// });
-
-export default withRouter(ForecastContainer);
+export default ForecastContainer;

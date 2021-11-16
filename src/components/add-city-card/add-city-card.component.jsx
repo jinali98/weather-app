@@ -1,10 +1,13 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 import Card from "../card/card.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { CardText, ContentWrapper } from "./add-city-card.styles";
 
-const AddCityCard = ({ history, match }) => {
+const AddCityCard = () => {
+  const history = useHistory();
+  const match = useRouteMatch();
+
   return (
     <Card addCity>
       <ContentWrapper>
@@ -20,4 +23,4 @@ const AddCityCard = ({ history, match }) => {
   );
 };
 
-export default withRouter(AddCityCard);
+export default AddCityCard;

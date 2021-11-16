@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { useDispatch, useSelector } from "react-redux";
 import HomePageContainer from "../../components/home-page-container/home-page-container.component";
 import { fetchASyncCountryListData } from "../../store/countryList/countryList.actions";
 import { selectCountryList } from "../../store/countryList/countryList.selectors";
 
-const HomePage = ({ match }) => {
+const HomePage = () => {
   const countryList = useSelector(selectCountryList);
   const dispatch = useDispatch();
 
@@ -16,14 +15,5 @@ const HomePage = ({ match }) => {
 
   return <HomePageContainer />;
 };
-
-// const mapStateToProps = createStructuredSelector({
-//   countryList: selectCountryList,
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   fetchCountryData: (countryList) =>
-//     dispatch(fetchASyncCountryListData(countryList)),
-// });
 
 export default HomePage;

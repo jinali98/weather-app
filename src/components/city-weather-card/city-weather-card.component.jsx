@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { icons } from "../../constant/icon";
 import Card from "../card/card.component";
 import {
@@ -13,7 +13,8 @@ import {
   WindSpeed,
 } from "./city-weather-card.styles";
 
-const CityWeatherCard = ({ history, country }) => {
+const CityWeatherCard = ({ country }) => {
+  const history = useHistory();
   const {
     current: { humidity, pressure, wind_speed, temp, weather },
     name,
@@ -37,4 +38,4 @@ const CityWeatherCard = ({ history, country }) => {
   );
 };
 
-export default withRouter(CityWeatherCard);
+export default CityWeatherCard;

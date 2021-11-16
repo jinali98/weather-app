@@ -1,6 +1,5 @@
 import React from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { useDispatch, useSelector } from "react-redux";
 import { icons } from "../../constant/icon";
 import { addCountry } from "../../store/countryList/countryList.actions";
 import { selectWeatherInfo } from "../../store/weather/weather.selectors";
@@ -41,13 +40,5 @@ const DisplayCityWeather = () => {
     </>
   );
 };
-
-// const mapStateToProps = createStructuredSelector({
-//   weatherInfo: selectWeatherInfo,
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   addCountry: (country) => dispatch(addCountry(country)),
-// });
 
 export default DisplayCityWeather;
