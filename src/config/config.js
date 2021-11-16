@@ -1,8 +1,8 @@
 export const API_URL_LOCATION =
-  "https://api.openweathermap.org/data/2.5/weather?q=";
+  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 export const API_URL_FORECAST =
-  "https://api.openweathermap.org/data/2.5/onecall?lat=";
+  "https://api.openweathermap.org/data/2.5/onecall?units=metric&lat=";
 
 // "https://api.openweathermap.org/data/2.5/weather?q=colombo&appid=23de14c96e3f808b747eec9f561cd9cc"
 

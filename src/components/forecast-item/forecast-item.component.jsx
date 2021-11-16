@@ -8,7 +8,7 @@ const ForecastItem = ({ day: { dt, weather, temp } }) => {
     <div>
       <p>{date}</p>
       <img src={icons[`${weather[0].main}`]} alt="" />
-      <p>{temp.day}</p>
+      <p>{temp.day} ℃</p>
       <p>{weather[0].main}</p>
     </div>
   );

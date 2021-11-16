@@ -32,13 +32,13 @@ const CityWeatherCard = ({ country }) => {
       <CardWrapper>
         <CountryName>{name}</CountryName>
         <WeatherImage src={icons[`${main}`]} alt="weather-icon" />
-        <Temperature>{temp}</Temperature>
+        <Temperature>{temp}℃</Temperature>
         <Condition>{main}</Condition>
-        <Preassure>{pressure}</Preassure>
-        <Humidity>{humidity}</Humidity>
-        <WindSpeed>{wind_speed}</WindSpeed>
+        <Preassure>{pressure}hPa</Preassure>
+        <Humidity>{humidity}%</Humidity>
+        <WindSpeed>{wind_speed} meter/sec</WindSpeed>
         <CustomButton onClick={() => history.push(`/${name}`)}>
-          forecast
+          View Forecast
         </CustomButton>
         <CustomButton onClick={() => dispatch(removeCountry(country))}>
           Remove

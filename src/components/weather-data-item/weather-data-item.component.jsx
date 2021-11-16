@@ -6,7 +6,7 @@ const WeatherDataItem = ({ current, name }) => {
     <div>
       <h1>{name}</h1>
       <div>
-        <p>{temp}</p>
+        <p>{temp} ℃</p>
         <p>{weather[0].main}</p>
         <div>
           <p>humidity</p>
@@ -14,7 +14,7 @@ const WeatherDataItem = ({ current, name }) => {
         </div>
         <div>
           <p>wind</p>
-          <p>{wind_speed} K/M</p>
+          <p>{wind_speed} meter/sec</p>
         </div>
       </div>
     </div>

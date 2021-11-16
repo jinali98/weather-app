@@ -34,11 +34,22 @@ export const submitBUtton = css`
   color: ${color_3};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 `;
+export const generalBUtton = css`
+  background-color: ${color_3};
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 5px;
+  background-color: ${color_2};
+  color: ${color_3};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+`;
 
 const getBUttonStyles = (props) => {
   if (props.backButton) return backButton;
   if (props.addCardButton) return addCardButton;
   if (props.submitBUtton) return submitBUtton;
+
+  return generalBUtton;
 };
 
 export const Button = styled.button`
