@@ -15,6 +15,10 @@ export const selectForecastUsingParam = (urlParam) =>
   createSelector([selectCountryListWeather], (countryList) => {
     return countryList.find((country) => country.name === urlParam);
   });
+export const selectIsInTheList = (id) =>
+  createSelector([selectCountryList], (countryList) => {
+    return countryList.find((country) => country.id === id);
+  });
 
 //get the country name or id
 //select the country obj with the same name from the country list

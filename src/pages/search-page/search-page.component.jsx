@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Card from "../../components/card/card.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import DisplayCityWeather from "../../components/display-city-weather/display-city-weather.component";
-import SearchBar from "../../components/search-bar/search-bar.component";
+import SearchCard from "../../components/search-card/search-card.component";
 import withSpinner from "../../hoc/withSpinner.component";
 import {
   selectIsLoading,
@@ -26,7 +26,7 @@ const SearchPage = () => {
         &#8592;
       </CustomButton>
       <SearchContentWrapper>
-        <SearchBar />
+        <SearchCard />
         <Card searchResultCard>
           <DisplayCityWithSpinner
             isLoading={isLoading}

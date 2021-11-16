@@ -14,3 +14,7 @@ export const selectWeatherInfo = createSelector(
   [selectSearchWeatherResult],
   (weather) => weather.weatherInfor
 );
+export const selectErrorMessage = createSelector(
+  [selectSearchWeatherResult],
+  (weather) => weather.errorMessage
+);

@@ -13,6 +13,7 @@ const weatherReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isLoading: true,
+        errorMessage: "",
         isStartedFetching: true,
       };
     case weatherActionTypes.SUCCESS_FETCHING_WEATHER_DATA:
@@ -20,6 +21,7 @@ const weatherReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         isStartedFetching: false,
+        errorMessage: "",
         weatherInfor: formatWeatherData(action.payload),
       };
     case weatherActionTypes.FAIL_FETCHING_WEATHER_DATA:

@@ -1,7 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { icons } from "../../constant/icon";
-import { addCountry } from "../../store/countryList/countryList.actions";
+import {
+  addCountry,
+  removeCountry,
+} from "../../store/countryList/countryList.actions";
+import { selectIsInTheList } from "../../store/countryList/countryList.selectors";
 import { selectWeatherInfo } from "../../store/weather/weather.selectors";
 import {
   CardWrapper,
@@ -11,11 +15,15 @@ import {
 const DisplayCityWeather = () => {
   const weatherInfo = useSelector(selectWeatherInfo);
   const dispatch = useDispatch();
+  const isInTheList = useSelector(selectIsInTheList(weatherInfo?.id));
 
   //add country to the list of selected countries
   const addCountryHandler = () => {
     const { name, id, coord } = weatherInfo;
     dispatch(addCountry({ name, id, coord }));
+  };
+  const removeCountryHandler = () => {
+    dispatch(removeCountry(weatherInfo));
   };
 
   return (
@@ -34,7 +42,11 @@ const DisplayCityWeather = () => {
             <p>{`min ${weatherInfo.main.temp_min}`}</p>
             <p>{`max ${weatherInfo.main.temp_max}`}</p>
           </div>
-          <button onClick={addCountryHandler}>add country</button>
+          {!isInTheList ? (
+            <button onClick={addCountryHandler}>add country</button>
+          ) : (
+            <button onClick={removeCountryHandler}>remove</button>
+          )}
         </CardWrapper>
       )}
     </>
