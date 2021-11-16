@@ -15,3 +15,13 @@ export const formatCountryListWeather = (fetchedData, countryList) => {
     return { ...fetchedData[index], id: country.id, name: country.name };
   });
 };
+
+export const removeCountryCard = (list, country) => {
+  console.log(list);
+  console.log(country);
+  const exisitingCountry = list.find((item) => item.id === country.id);
+
+  if (!exisitingCountry) return;
+
+  return list.filter((listItem) => listItem.id !== country.id);
+};

@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { icons } from "../../constant/icon";
+import { removeCountry } from "../../store/countryList/countryList.actions";
 import Card from "../card/card.component";
+import CustomButton from "../custom-button/custom-button.component";
 import {
   CardWrapper,
   Condition,
@@ -14,6 +17,7 @@ import {
 } from "./city-weather-card.styles";
 
 const CityWeatherCard = ({ country }) => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const {
     current: { humidity, pressure, wind_speed, temp, weather },
@@ -25,7 +29,7 @@ const CityWeatherCard = ({ country }) => {
 
   return (
     <Card weatherCard>
-      <CardWrapper onClick={() => history.push(`/${name}`)}>
+      <CardWrapper>
         <CountryName>{name}</CountryName>
         <WeatherImage src={icons[`${main}`]} alt="weather-icon" />
         <Temperature>{temp}</Temperature>
@@ -33,6 +37,12 @@ const CityWeatherCard = ({ country }) => {
         <Preassure>{pressure}</Preassure>
         <Humidity>{humidity}</Humidity>
         <WindSpeed>{wind_speed}</WindSpeed>
+        <CustomButton onClick={() => history.push(`/${name}`)}>
+          forecast
+        </CustomButton>
+        <CustomButton onClick={() => dispatch(removeCountry(country))}>
+          Remove
+        </CustomButton>
       </CardWrapper>
     </Card>
   );

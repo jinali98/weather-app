@@ -2,6 +2,7 @@ import { countryListActionTypes } from "./countryList.types";
 import {
   addNewCountryToTheList,
   formatCountryListWeather,
+  removeCountryCard,
 } from "./countryList.utils";
 
 const INITIAL_STATE = {
@@ -22,6 +23,11 @@ const countryListReducer = (state = INITIAL_STATE, action) => {
     case countryListActionTypes.REMOVE_COUNTRY:
       return {
         ...state,
+        countryList: removeCountryCard(state.countryList, action.payload),
+        countryListWeatherData: removeCountryCard(
+          state.countryListWeatherData,
+          action.payload
+        ),
       };
     case countryListActionTypes.START_FETCHING_COUNTRYlIST_DATA:
       return {
@@ -46,6 +52,7 @@ const countryListReducer = (state = INITIAL_STATE, action) => {
         isStartedFetching: false,
         errorMessage: action.payload,
       };
+
     default:
       return state;
   }
