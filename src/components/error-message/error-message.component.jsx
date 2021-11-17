@@ -1,7 +1,8 @@
 import React from "react";
+import { Message } from "./error-message.styles";
 
 const ErrorMessage = ({ children }) => {
-  return <p>{children}</p>;
+  return <Message>{children}</Message>;
 };
 
 export default ErrorMessage;

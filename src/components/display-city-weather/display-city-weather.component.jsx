@@ -12,6 +12,7 @@ import {
   WeatherImage,
 } from "../city-weather-card/city-weather-card.styles";
 import CustomButton from "../custom-button/custom-button.component";
+import { Temperature, Title, WeatherItem } from "./display-city-weather.styles";
 
 const DisplayCityWeather = () => {
   const weatherInfo = useSelector(selectWeatherInfo);
@@ -32,16 +33,16 @@ const DisplayCityWeather = () => {
       {/* if there is a city show weather data. add a background image  display data on it*/}
       {weatherInfo && (
         <CardWrapper>
-          <p>{weatherInfo.name}</p>
+          <Title>{weatherInfo.name}</Title>
           <WeatherImage
             src={icons[`${weatherInfo.condition}`]}
             alt="weather-icon"
           />
-          <p>{weatherInfo.main.temp} ℃</p>
-          <p>{weatherInfo.condition}</p>
+          <Temperature>{weatherInfo.main.temp} ℃</Temperature>
+          <WeatherItem>{weatherInfo.condition}</WeatherItem>
           <div>
-            <p>{`min ${weatherInfo.main.temp_min} ℃`}</p>
-            <p>{`max ${weatherInfo.main.temp_max} ℃`}</p>
+            <WeatherItem>{`Min : ${weatherInfo.main.temp_min} ℃`}</WeatherItem>
+            <WeatherItem>{`Max : ${weatherInfo.main.temp_max} ℃`}</WeatherItem>
           </div>
           {!isInTheList ? (
             <CustomButton onClick={addCountryHandler}>
