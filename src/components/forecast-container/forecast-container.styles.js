@@ -12,4 +12,17 @@ export const ForecastWrapper = styled.div`
 
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: auto;
+  }
+  @media (max-width: 360px) {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    margin: auto;
+  }
 `;

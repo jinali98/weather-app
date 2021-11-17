@@ -10,7 +10,6 @@ export const SearchForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   margin: 1rem;
 `;
 
@@ -22,10 +21,19 @@ export const Input = styled.input`
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   font-size: 20px;
+
+  @media (max-width: 360px) {
+    width: 85%;
+    margin-right: 5px;
+  }
 `;
 
 export const SearchIcon = styled(SeachIconComponent)`
   width: 50px;
   background-color: none;
   border: none;
+
+  @media (max-width: 360px) {
+    width: 25px;
+  }
 `;

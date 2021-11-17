@@ -7,6 +7,13 @@ export const HeaderContainer = styled.div`
   background-color: ${color_1};
   margin: auto;
   text-align: center;
+
+  @media (max-width: 768px) {
+    height: 7vh;
+  }
+  @media (max-width: 360px) {
+    height: 12vh;
+  }
 `;
 export const ContentWrapper = styled.div`
   width: 80vw;
@@ -15,6 +22,10 @@ export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 360px) {
+    width: 85vw;
+  }
 `;
 
 export const Date = styled.p`

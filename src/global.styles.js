@@ -20,13 +20,13 @@ export const cardBackground_2 = {
     "linear-gradient(241deg, #D5D3DB 3%, rgba(56,81,138,1) 42%, rgba(43,36,77,1) 89%)",
 };
 
-//300, 400, 500, 800
+//font weights 300, 400, 500, 800
 
 export const GlobalStyle = createGlobalStyle`
 
 body{
     padding: 0;
-  
+  font-weight: 300;
     line-height: 1.5;
     font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Tajawal', sans-serif;

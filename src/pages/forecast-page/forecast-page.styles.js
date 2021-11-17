@@ -6,4 +6,8 @@ export const ForecastPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 360px) {
+    width: 85vw;
+  }
 `;

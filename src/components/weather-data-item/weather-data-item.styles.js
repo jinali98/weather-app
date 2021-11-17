@@ -18,12 +18,26 @@ export const WeatherDataItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 400px;
+    flex-direction: column;
+    margin: auto;
+  }
 `;
 
 export const Title = styled(CountryName)`
   width: 30%;
   font-size: 54px;
   color: ${color_3};
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 360px) {
+    width: 100%;
+  }
 `;
 
 export const WeatherInformationItem = styled.p`
@@ -36,6 +50,12 @@ export const WeatherItemName = styled.p`
 
 export const WeatherDataItemContent = styled.div`
   width: 60%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 360px) {
+    width: 100%;
+  }
 `;
 
 export const OtherInfoContainer = styled.div`
@@ -43,4 +63,10 @@ export const OtherInfoContainer = styled.div`
   justify-content: space-around;
   align-items: baseline;
   margin-top: 30px;
+
+  @media (max-width: 360px) {
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+  }
 `;

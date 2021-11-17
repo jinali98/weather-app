@@ -26,13 +26,17 @@ export const addCardButton = css`
   border: none;
 `;
 export const submitBUtton = css`
-  background-color: ${color_3};
   border-radius: 50%;
   width: 80px;
   height: 80px;
   background-color: ${color_2};
   color: ${color_3};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 360px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 export const generalBUtton = css`
   background-color: ${color_3};

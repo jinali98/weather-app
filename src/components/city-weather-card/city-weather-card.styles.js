@@ -12,6 +12,11 @@ export const CardWrapper = styled.div`
   height: 90%;
   margin: 1rem auto;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 92%;
+  }
 `;
 
 export const CountryName = styled.p`

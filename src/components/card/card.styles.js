@@ -20,11 +20,20 @@ const addCityCard = css`
 const searchPageCard = css`
   width: 50%;
   text-align: center;
-  padding: 0%.5rem;
+  padding: 0.5rem;
   background-color: ${color_3};
   color: ${color_6};
   border-radius: 12px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 300px;
+  }
+  @media (max-width: 360px) {
+    width: 100%;
+    height: 500px;
+  }
 `;
 const searchResultCard = css`
   width: 50%;
@@ -39,6 +48,15 @@ const searchResultCard = css`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 520px;
+    margin-bottom: 1rem;
+  }
+  /* @media (max-width: 360px) {
+    width: 100%;
+    height: 520px;
+  } */
 `;
 
 const getCardStyles = (props) => {
