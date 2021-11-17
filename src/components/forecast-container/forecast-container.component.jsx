@@ -5,6 +5,7 @@ import { selectForecastUsingParam } from "../../store/countryList/countryList.se
 import Card from "../card/card.component";
 import ForecastItem from "../forecast-item/forecast-item.component";
 import WeatherDataItem from "../weather-data-item/weather-data-item.component";
+import { ForecastWrapper } from "./forecast-container.styles";
 
 const ForecastContainer = () => {
   const params = useParams();
@@ -17,11 +18,11 @@ const ForecastContainer = () => {
         current={forecastWeather.current}
         name={forecastWeather.name}
       />
-      <div>
+      <ForecastWrapper>
         {forecastWeather.daily?.slice(0, 5).map((day) => (
           <ForecastItem key={day.dt} day={day} />
         ))}
-      </div>
+      </ForecastWrapper>
     </Card>
   );
 };

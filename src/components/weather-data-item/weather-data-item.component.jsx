@@ -1,23 +1,35 @@
 import React from "react";
+import {
+  OtherInfoContainer,
+  Title,
+  WeatherDataItemContent,
+  WeatherDataItemWrapper,
+  WeatherInformationItem,
+  WeatherItemName,
+} from "./weather-data-item.styles";
 
 const WeatherDataItem = ({ current, name }) => {
   const { temp, wind_speed, humidity, weather } = current;
   return (
-    <div>
-      <h1>{name}</h1>
-      <div>
-        <p>{temp} ℃</p>
-        <p>{weather[0].main}</p>
-        <div>
-          <p>humidity</p>
-          <p>{humidity}%</p>
-        </div>
-        <div>
-          <p>wind</p>
-          <p>{wind_speed} meter/sec</p>
-        </div>
-      </div>
-    </div>
+    <WeatherDataItemWrapper>
+      <Title>{name}</Title>
+      <WeatherDataItemContent>
+        <WeatherInformationItem>{temp} ℃</WeatherInformationItem>
+        <WeatherInformationItem>{weather[0].main}</WeatherInformationItem>
+        <OtherInfoContainer>
+          <div>
+            <WeatherInformationItem>{humidity}%</WeatherInformationItem>
+            <WeatherItemName>Humidity</WeatherItemName>
+          </div>
+          <div>
+            <WeatherInformationItem>
+              {wind_speed} meter/sec
+            </WeatherInformationItem>
+            <WeatherItemName>Wind</WeatherItemName>
+          </div>
+        </OtherInfoContainer>
+      </WeatherDataItemContent>
+    </WeatherDataItemWrapper>
   );
 };
 
