@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { color_1, color_2, color_3 } from "../../global.styles";
+import { color_2, color_3 } from "../../global.styles";
 
 const backButton = css`
   width: 100px;

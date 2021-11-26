@@ -22,7 +22,6 @@ const CityWeatherCard = ({ country }) => {
   const {
     current: { humidity, pressure, wind_speed, temp, weather },
     name,
-    id,
   } = country;
 
   const { main } = weather[0];
