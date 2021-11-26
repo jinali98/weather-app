@@ -9,7 +9,7 @@ const NotFoundPage = () => {
   return (
     <ErrorContainer>
       <ImageContainer />
-      <ErrorMessage>Page not found</ErrorMessage>
+      <ErrorMessage>Page is Not on the Map</ErrorMessage>
     </ErrorContainer>
   );
 };

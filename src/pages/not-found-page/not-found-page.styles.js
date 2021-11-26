@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const ErrorContainer = styled.div`
   width: 70vw;
-  height: 50vh;
-  margin: 1rem auto;
+
+  margin: auto;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const ImageContainer = styled.div`
