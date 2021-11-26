@@ -1,10 +1,20 @@
-https://minimus-weather.web.app/details/Rome
-https://hamedbaatour.medium.com/build-a-real-world-beautiful-web-app-with-angular-8-the-ultimate-guide-2019-part-ii-fe70852b2d6d
+# Weather App
 
-links to image
+Weather app allow users to store their favorite locations and view current weather data and weather forecast
 
-https://i.ibb.co/zhXTJgB/default.png
-https://i.ibb.co/Z8D43nW/france.png
-https://i.ibb.co/ZXmphvT/qatar.png
-https://i.ibb.co/C1rwh9f/rabat.png
-https://i.ibb.co/kBF5j65/tunis.png
+## Stack
+
+- React.js to build the front-end
+- Redux for state management 
+- React-router for routing 
+- Redux- reselect to memorize expensive calculations 
+- Redux- persist to store country data in local storage
+- Styled Components to keep the concerns of styling and element architecture separated and make component more readable
+
+## Complete MVP
+1.	Search for current weather data based on cities
+2.	Add cities to favorite list
+3.	Remove cities from favorite list 
+4.	View Forecast weather data for every city in the list 
+5.	View current weather data for all the added cities
+6.	View different weather card background images when refresh the page
