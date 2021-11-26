@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ErrorContainer = styled.div`
   width: 70vw;
 
-  margin: auto;
+  margin: 20px auto;
 
   display: flex;
   flex-direction: column;

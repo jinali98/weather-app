@@ -5,11 +5,11 @@ import {
   ImageContainer,
 } from "./not-found-page.styles";
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ msg = "page is not on the map" }) => {
   return (
     <ErrorContainer>
       <ImageContainer />
-      <ErrorMessage>Page is Not on the Map</ErrorMessage>
+      <ErrorMessage>{msg}</ErrorMessage>
     </ErrorContainer>
   );
 };

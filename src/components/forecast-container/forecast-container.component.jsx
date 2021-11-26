@@ -28,7 +28,7 @@ const ForecastContainer = () => {
           </ForecastWrapper>
         </Card>
       ) : (
-        <NotFoundPage />
+        <NotFoundPage msg="seems like a wrong country!" />
       )}
     </>
   );
