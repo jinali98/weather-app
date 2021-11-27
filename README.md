@@ -2,6 +2,8 @@
 
 Weather app allow users to store their favorite locations and view current weather data and weather forecast
 
+![App Screenshot](https://ibb.co/sPsDrKw)
+
 ## Stack
 
 - React.js to build the front-end
