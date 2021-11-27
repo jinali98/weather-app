@@ -2,7 +2,7 @@
 
 Weather app allow users to store their favorite locations and view current weather data and weather forecast
 
-![smartmockups_kwh7n3p0](https://user-images.githubusercontent.com/68109485/143665939-f9162896-585b-432f-9ae3-2ba19f5177b0.jpg)
+<img src="https://user-images.githubusercontent.com/68109485/143665939-f9162896-585b-432f-9ae3-2ba19f5177b0.jpg" alt="weather-app" border="0" width="50%">
 
 
 ## Stack
